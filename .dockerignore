@@ -11,9 +11,7 @@ dist
 build
 *.dist
 
-# Environment variables (nunca incluir segredos em imagens)
-.env*
-!.env.example
+
 
 # IDE and editor files
 .vscode
