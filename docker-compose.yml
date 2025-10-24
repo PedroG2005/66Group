@@ -1,0 +1,63 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: development # Usa o estágio de desenvolvimento do Dockerfile
+    container_name: 66group-frontend-dev
+    ports:
+      - "3000:3000" # Mapeia a porta do container para a porta local
+    volumes:
+      # Monta o código local no container para hot-reloading
+      # Exclui node_modules local para usar o do container
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_APP_TITLE=66 Group (Dev) # Exemplo de variável de ambiente para dev
+      # Adicione outras variáveis de ambiente necessárias para desenvolvimento
+    command: pnpm dev # Comando para iniciar o servidor de desenvolvimento Vite
+    networks:
+      - app-network
+
+  # --- Placeholders para Futuro Backend e Banco de Dados ---
+  # Descomente e configure quando precisar
+
+  # backend:
+  #   build:
+  #     context: ./server # Ou onde quer que seu backend esteja
+  #     dockerfile: Dockerfile # Se tiver um Dockerfile específico para o backend
+  #   container_name: 66group-backend-dev
+  #   ports:
+  #     - "3001:3001" # Exemplo de porta para o backend
+  #   volumes:
+  #     - ./server:/app # Ou o caminho do seu backend
+  #     - /app/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - DATABASE_URL=postgresql://user:password@db:5432/mydatabase # Exemplo
+  #   depends_on:
+  #     - db # Exemplo: Se o backend depende do banco de dados
+  #   command: pnpm dev # Ou o comando para iniciar seu backend em modo dev
+  #   networks:
+  #     - app-network
+
+  # db:
+  #   image: postgres:15-alpine # Exemplo usando PostgreSQL
+  #   container_name: 66group-db-dev
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: mydatabase
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data # Persiste os dados do banco
+  #   ports:
+  #     - "5432:5432" # Mapeia a porta do banco (opcional, para acesso externo)
+  #   networks:
+  #     - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+# volumes: # Descomente se usar o placeholder do banco de dados
+#   postgres_data:

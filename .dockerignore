@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# Node modules
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+build
+*.dist
+
+# Environment variables (nunca incluir segredos em imagens)
+.env*
+!.env.example
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test / Coverage artifacts
+coverage
+.nyc_output
+
+# Outros
+docker-compose.yml # Não precisa estar na imagem final
+Dockerfile # Não precisa estar na imagem final
+README*.md # Arquivos de documentação

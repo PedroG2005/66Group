@@ -44,7 +44,7 @@
 }
 
 :root {
-  /* 66 Group Color Palette */
+  /* 66 Group Brand Colors - Preto e Vermelho */
   --primary: oklch(0.55 0.2 25);  /* Vermelho #E52320 */
   --primary-foreground: oklch(1 0 0);  /* Branco */
   --sidebar-primary: oklch(0.55 0.2 25);  /* Vermelho */
@@ -54,26 +54,26 @@
   --chart-3: oklch(0.4 0 0);
   --chart-4: oklch(0.6 0 0);
   --chart-5: oklch(0.7 0 0);
-  --radius: 0.65rem;
+  --radius: 0.75rem;
   --background: oklch(1 0 0);  /* Branco Puro */
-  --foreground: oklch(0.1 0 0);  /* Preto #1A1A1A */
+  --foreground: oklch(0.15 0 0);  /* Preto #0f172a */
   --card: oklch(1 0 0);  /* Branco */
-  --card-foreground: oklch(0.1 0 0);  /* Preto */
+  --card-foreground: oklch(0.15 0 0);  /* Preto */
   --popover: oklch(1 0 0);  /* Branco */
-  --popover-foreground: oklch(0.1 0 0);  /* Preto */
-  --secondary: oklch(0.1 0 0);  /* Preto */
+  --popover-foreground: oklch(0.15 0 0);  /* Preto */
+  --secondary: oklch(0.15 0 0);  /* Preto */
   --secondary-foreground: oklch(1 0 0);  /* Branco */
-  --muted: oklch(0.96 0 0);  /* Cinza Claro #F5F5F5 */
-  --muted-foreground: oklch(0.4 0 0);  /* Cinza Escuro #666666 */
+  --muted: oklch(0.96 0 0);  /* Cinza muito claro #f8fafc */
+  --muted-foreground: oklch(0.45 0 0);  /* Cinza médio #475569 */
   --accent: oklch(0.55 0.2 25);  /* Vermelho */
   --accent-foreground: oklch(1 0 0);  /* Branco */
   --destructive: oklch(0.62 0.22 29);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0 0);  /* Cinza muito claro */
+  --border: oklch(0.9 0 0);  /* Cinza claro #e2e8f0 */
   --input: oklch(1 0 0);  /* Branco */
   --ring: oklch(0.55 0.2 25);  /* Vermelho */
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-accent: oklch(0.55 0.2 25);
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.9 0 0);
@@ -85,11 +85,11 @@
   --primary-foreground: oklch(1 0 0);  /* Branco */
   --sidebar-primary: oklch(0.55 0.2 25);  /* Vermelho */
   --sidebar-primary-foreground: oklch(1 0 0);  /* Branco */
-  --background: oklch(0.1 0 0);  /* Preto */
+  --background: oklch(0.15 0 0);  /* Preto */
   --foreground: oklch(1 0 0);  /* Branco */
-  --card: oklch(0.15 0 0);  /* Cinza muito escuro */
+  --card: oklch(0.2 0 0);  /* Cinza muito escuro */
   --card-foreground: oklch(1 0 0);  /* Branco */
-  --popover: oklch(0.15 0 0);  /* Cinza muito escuro */
+  --popover: oklch(0.2 0 0);  /* Cinza muito escuro */
   --popover-foreground: oklch(1 0 0);  /* Branco */
   --secondary: oklch(0.2 0 0);  /* Cinza escuro */
   --secondary-foreground: oklch(1 0 0);  /* Branco */
@@ -100,14 +100,14 @@
   --destructive: oklch(0.62 0.22 29);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.2 0 0);  /* Cinza escuro */
-  --input: oklch(0.15 0 0);  /* Cinza muito escuro */
+  --input: oklch(0.2 0 0);  /* Cinza escuro */
   --ring: oklch(0.55 0.2 25);  /* Vermelho */
   --chart-1: oklch(0.55 0.2 25);
   --chart-2: oklch(0.7 0 0);
   --chart-3: oklch(0.6 0 0);
   --chart-4: oklch(0.5 0 0);
   --chart-5: oklch(0.4 0 0);
-  --sidebar: oklch(0.1 0 0);
+  --sidebar: oklch(0.15 0 0);
   --sidebar-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.55 0.2 25);
   --sidebar-accent-foreground: oklch(1 0 0);
@@ -169,27 +169,27 @@
   }
 
   .gradient-red-black {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply bg-gradient-to-r from-red-600 to-slate-900;
   }
 
   .card-elevated {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow;
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200;
   }
 
   .button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors px-6 py-3 rounded-lg font-semibold;
+    @apply bg-red-600 hover:bg-red-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg px-6 py-3 rounded-lg font-semibold;
   }
 
   .button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors px-6 py-3 rounded-lg font-semibold;
+    @apply bg-slate-900 hover:bg-slate-800 text-white transition-all duration-300 px-6 py-3 rounded-lg font-semibold;
   }
 
   .text-muted {
-    @apply text-muted-foreground;
+    @apply text-slate-600;
   }
 
   .divider-red {
-    @apply h-1 bg-primary w-16;
+    @apply h-1 bg-red-600 w-16;
   }
 
   .bg-light {
@@ -197,10 +197,18 @@
   }
 
   .bg-lighter {
-    @apply bg-muted;
+    @apply bg-slate-50;
   }
 
   .bg-dark {
-    @apply bg-secondary;
+    @apply bg-slate-900;
+  }
+
+  .hero-gradient {
+    @apply bg-gradient-to-br from-slate-900 via-red-900 to-slate-800;
+  }
+
+  .section-padding-modern {
+    @apply py-20 md:py-28;
   }
 }
