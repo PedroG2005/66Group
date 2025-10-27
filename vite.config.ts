@@ -7,7 +7,6 @@ import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-// Obter o diretório atual de forma compatível com ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -15,22 +14,21 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
+  root: path.resolve(__dirname, "client"), // a pasta client é o ponto de entrada
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"), // Usar __dirname
-      "@shared": path.resolve(__dirname, "shared"), // Usar __dirname
-      "@assets": path.resolve(__dirname, "attached_assets"), // Usar __dirname (se essa pasta existir)
+      "@": path.resolve(__dirname, "client/src"),
+      "@shared": path.resolve(__dirname, "shared"),
+      "@assets": path.resolve(__dirname, "attached_assets"), // mantenha se existir
     },
   },
-  envDir: path.resolve(__dirname), // Usar __dirname
-  root: path.resolve(__dirname, "client"), // Usar __dirname
+  envDir: path.resolve(__dirname, "client"), // .env do frontend
   build: {
-    outDir: path.resolve(__dirname, "dist/public"), // Usar __dirname
+    outDir: path.resolve(__dirname, "client/dist"), // <-- corrigido
     emptyOutDir: true,
   },
   server: {
     port: 3000,
-    strictPort: false,
     host: true,
     allowedHosts: [
       ".manuspre.computer",
