@@ -1,8 +1,29 @@
-<link rel="icon" type="image/png" href="/logo-66group.png" />
-<link rel="apple-touch-icon" href="/logo-66group.png" />
-<title>66 Group</title>
-<script
-  defer
-  src="https://your-analytics-url.com/umami"
-  data-website-id="your-website-id">
-</script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="icon" type="image/png" href="/logo-66group.png" />
+    <link rel="apple-touch-icon" href="/logo-66group.png" />
+    <title>66 Group</title>
+
+    <!-- ✅ Removido script externo com domínio inválido -->
+    <!-- Caso queira reativar o Umami futuramente, substitua abaixo com a URL real -->
+    <!--
+    <script
+      defer
+      src="https://your-analytics-url.com/umami"
+      data-website-id="your-website-id">
+    </script>
+    -->
+  </head>
+
+  <body>
+    <!-- ✅ Container necessário para o React -->
+    <div id="root"></div>
+
+    <!-- ✅ Carregamento correto do bundle do Vite -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
