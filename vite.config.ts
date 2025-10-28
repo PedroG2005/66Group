@@ -14,17 +14,17 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  root: path.resolve(__dirname, "client"), // a pasta client é o ponto de entrada
+  root: path.resolve(__dirname, "client"),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "attached_assets"), // mantenha se existir
+      "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  envDir: path.resolve(__dirname, "client"), // .env do frontend
+  envDir: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "client/dist"), // <-- corrigido
+    outDir: path.resolve(__dirname, "client/dist"), // ✅ build dentro de client
     emptyOutDir: true,
   },
   server: {
